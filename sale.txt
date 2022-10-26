@@ -1,0 +1,99 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package com.mycompany.pattern;
+
+/**
+ *
+ * @author Vishnu
+ */
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+public class sale implements ActionListener
+{
+       JFrame f=new JFrame();
+       JButton b1,b2,b3,b4;
+       JLabel l1,l2,l3,l4,l5,l6,l7,l8,l9;
+       JTextField t1,t2,t3,t4,t5;
+       sale()
+       {
+           ImageIcon d = new ImageIcon("C:\\Users\\Vishnu\\Documents\\NetBeansProjects\\pattern\\src\\main\\java\\w1.jpeg");
+       b1=new JButton();
+       b1.setIcon(d);
+       b1.setBounds(0,0,200,200);
+       Icon p=new ImageIcon("C:\\Users\\Vishnu\\Documents\\NetBeansProjects\\pattern\\src\\main\\java\\laptop.jpeg");
+       b2=new JButton();
+       b2.setIcon(p);
+       b2.setBounds(0,250,250,250);
+      Icon t=new ImageIcon("C:\\Users\\Vishnu\\Documents\\NetBeansProjects\\pattern\\src\\main\\java\\phone.jpg");
+       b3=new JButton();
+       b3.setIcon(t);
+        b3.setBounds(900,100,300,400);
+       l1=new JLabel("price:2500");
+       l1.setBounds(250,100, 150, 100);
+       l2=new JLabel("quantity");
+        l2.setBounds(350,100, 150, 100);
+        t2=new JTextField();
+        t2.setBounds(410, 120, 50, 50);
+       //laptop
+       l4=new JLabel("price:70,100");
+       l4.setBounds(270, 250, 150, 100);
+       
+       l5=new JLabel("quantity");
+        l5.setBounds(370,250, 150, 100);
+       t5=new JTextField();
+       t5.setBounds(430,280 ,50, 50);
+        
+        //phone
+        l7=new JLabel("price:80,000");
+       l7.setBounds(1230,250, 150, 100);
+       l8=new JLabel("quantity");
+        l8.setBounds(1350,250, 150, 100);
+       t3=new JTextField();
+       t3.setBounds(1400,280 ,50, 50);
+       
+       b4=new JButton("order");
+       b4.setBounds(700,500,100,100);
+       f.setLayout(null);
+       f.setSize(500,500);
+       f.setVisible(true);
+       f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       f.setTitle("welcome to shopping");
+       f.add(b1);
+       f.add(b2);
+        f.add(b3);
+        f.add(b4);
+       f.add(l1);f.add(l2);f.add(l4);f.add(l5);f.add(l7);f.add(l8);
+       f.add(t2);f.add(t5);f.add(t3);
+       b4.addActionListener(this);
+       }
+    
+    public static void main(String[] args)
+    {
+              new sale();
+    }
+    public void actionPerformed(ActionEvent a)
+       {
+           
+           int tot1=0,tot2=0,tot3=0;
+          String q=t2.getText();
+          String q1=t5.getText();
+          String q2=t3.getText();
+          int amt=Integer.parseInt(q);
+          int amt1=Integer.parseInt(q1);
+          int amt2=Integer.parseInt(q2);
+           tot1=amt*2500;
+           tot2=amt1*70100;
+             tot3=amt2*80000;
+          int tot=tot1+tot2+tot3;
+          JOptionPane.showMessageDialog(f,"order placed\n"+"total:"+tot);
+       }
+}
